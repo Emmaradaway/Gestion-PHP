@@ -1,0 +1,643 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;400&display=swap");
+
+
+.kanit-regular {
+  font-family: "Kanit", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato&display=swap');
+
+.josefin-sans{
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato&display=swap');
+.gowun-dodum-regular {
+    font-family: "Gowun Dodum", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+/*Header*/
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 5px 20px;
+    font-family: 'kanit';
+  }
+  
+  .header .logo {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .header .logo img {
+    height: 150px;
+    width: auto;
+    transition: all 1.2s;
+  }
+  
+  .header .logo img:hover {
+    transform: scale(1.1);
+  }
+  
+  
+  .header nav .links {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .links li {
+    display: inline-block;
+    padding: 5px 20px;
+    transition: all 1.2s;
+  }
+  
+  .header nav .links a {
+    font-size: 17px;
+    color: #880d1e;
+    text-decoration: none;
+  }
+  
+  .header nav .links li:hover {
+    transform: scale(1.2);
+  }
+  
+  .header nav .links li a:hover {
+    color: #880d1e;
+  }
+  
+  
+  .btn button {
+    font-weight: 700;
+    color: aliceblue;
+    padding: 10px 30px;
+    background-color: #1b1b1b;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 1s;
+  }
+  
+  .btn button:hover {
+    transform: scale(1.1);
+  }
+  
+  
+  .hamburger {
+    display: none;
+    font-size: 30px;  
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #880d1e;
+  }
+  #extra-link{
+    display: none;
+  }
+  
+  
+  @media (max-width: 700px) {
+    .header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+   
+    .header nav .links{
+      display: none;
+      flex-direction: column-reverse;
+      position: absolute;
+      top: 130px;
+      right: 0;
+      background-color: white;
+      width: 100%;
+      text-align: center;
+      z-index: 10000;
+    }
+  
+    .header nav .links.active {
+      display: flex;
+    }
+  
+  
+    .links li,#extra-link {
+      display: block;
+      padding: 0 5px;
+    }
+    
+  
+  
+    .hamburger {
+      display: block;
+    }
+  .btn{
+    display: none;
+  }
+  }
+  .line {
+    width: 100%; /* Ajustamos el ancho para que no abarque toda la pantalla */
+    height: 1px; /* Grosor muy delgado */
+    background-color: rgba(0, 0, 0, 0.3); /* Color negro con baja opacidad (10%) */
+    margin: 10px auto; /* Centramos la línea horizontalmente y añadimos margen */
+  }
+
+
+
+  .container {
+    width: 90%; /* Ancho del contenedor */
+    max-width: 800px; /* Ancho máximo */
+    margin: auto; /* Centrar el contenedor */
+  }
+  
+  /* Contenido del footer */
+  .footer-content {
+    display: flex; /* Usar flexbox para una disposición responsiva */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centrar verticalmente */
+    flex-wrap: wrap; /* Permitir que los elementos se muevan a la siguiente línea */
+  font-family: "Kanit", serif;
+  }
+  
+  .contact-info {
+    text-align: left; /* Alinear texto a la izquierda */
+  }
+  
+  .contact-info p {
+    margin: 5px 0; /* Espaciado entre párrafos */
+  }
+  
+  .footer-social a {
+    color: black; /* Color de los iconos */
+    margin: 0 10px; /* Espaciado entre iconos */
+    font-size: 1.5em; /* Tamaño de los iconos */
+    transition: color 0.3s; /* Transición suave para el color */
+    text-decoration: none;
+  
+  }
+  
+  .footer-social a:hover {
+    color: #7BA05B;
+  }
+  
+  /* Estilo responsivo */
+  @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+    }
+  
+    .footer-social {
+        margin-top: 10px; /* Espaciado superior en vista móvil */
+    }
+  }
+  /* Tabla */
+  /* Estilos del contenedor */
+.Tabla-medico {
+    max-width: 90%;
+    max-height: 600px; /* Altura máxima para limitar el tamaño del contenedor */
+    padding: 10px;
+    margin: 20px auto;
+    overflow-y: auto; /* Activar el scroll vertical si la tabla supera la altura máxima */
+    overflow-x: auto; /* Opcional: Ocultar el scroll horizontal */
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+/* Estilos de la tabla */
+.Tabla-medico table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #232528;
+}
+
+.Tabla-medico th, .Tabla-medico td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.Tabla-medico th {
+    background-color: #232528;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+}
+
+.Tabla-medico tr{
+    font-family: "Gowun Dodum", sans-serif;
+    background-color: #FEFEFA;
+
+}
+
+/* Iconos de acciones */
+.Tabla-medico .fas {
+    color: #003262;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.Tabla-medico .fas:hover {
+    color: #007FFF;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .Tabla-medico th, .Tabla-medico td {
+        padding: 8px;
+    }
+
+    .Tabla-medico th {
+        font-size: 12px;
+        background-color: #1B1B1B;
+    }
+
+    .Tabla-medico td {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Tabla-medico table {
+        font-size: 0.8em; /* Reducir tamaño de fuente en dispositivos móviles */
+    }
+
+    .Tabla-medico th, .Tabla-medico td {
+        padding: 6px; /* Reducir el padding para que quepa mejor en pantallas pequeñas */
+    }
+
+    .Tabla-medico th {
+        background-color: #333; /* Opcional: Color más oscuro para encabezados */
+        color: white;
+    }
+}
+/* Modal */
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    font-family: "Kanit", serif;
+
+  }
+  
+  
+  .modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 650px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    position: relative;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+  }
+  
+  .cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .cerrar:hover,
+  .cerrar:focus {
+    color: black;
+  }
+
+  body.modal-open {
+    filter: blur(5px); 
+  }
+  
+  .form-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; 
+  }
+  
+  
+  .form-modal label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-modal input {
+    padding: 4px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-modal input:focus {
+    border-color: #7BA05B;
+    outline: none;
+  }
+  
+  .form-modal .guardar {
+    background-color: #1B1B1B;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-modal .guardar:hover {
+    background-color: #3B3C36;
+  }
+  .modal h2 {
+    text-align: center;
+  }
+
+
+
+  h1 {
+    text-align: center;
+    margin-bottom: auto;
+    font-size: 4em;
+  font-family: "Lato", sans-serif;
+
+}
+
+.btnmedicos {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+
+}
+.btn-medicos{
+  --width: 150px;
+  --timing: 2s;
+  border: 0;
+  width: var(--width);
+  padding-block: 1em;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  background: black;
+  transition: all 0.2s;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-medicos:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(250, 82, 82),
+    rgb(250, 82, 82) 16.65%,
+    rgb(190, 75, 219) 16.65%,
+    rgb(190, 75, 219) 33.3%,
+    rgb(76, 110, 245) 33.3%,
+    rgb(76, 110, 245) 49.95%,
+    rgb(64, 192, 87) 49.95%,
+    rgb(64, 192, 87) 66.6%,
+    rgb(250, 176, 5) 66.6%,
+    rgb(250, 176, 5) 83.25%,
+    rgb(253, 126, 20) 83.25%,
+    rgb(253, 126, 20) 100%,
+    rgb(250, 82, 82) 100%
+  );
+  animation: var(--timing) linear dance6123 infinite;
+  transform: scale(1.1) translateY(-1px);
+}
+
+@keyframes dance6123 {
+  to {
+    background-position: var(--width);
+  }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+        .btnmedicos {
+            gap: 10px;
+        }
+    
+        .btn-medicos, .btn {
+            width: 40%; /* Ocupa la mitad del ancho en pantallas pequeñas */
+            font-size: 0.9em;
+            padding: 6px 8px; /* Ajuste de padding para botones más pequeños */
+        }
+    }
+    .btn-eliminar {
+        background-color: transparent; /* Fondo transparente */
+        border: none; /* Sin borde */
+        color: #003262; /* Color del icono, puedes cambiarlo */
+        cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+        padding: 0; /* Sin padding adicional */
+        font-size: 1.2em; /* Tamaño del icono */
+      }
+      
+      .btn-eliminar:hover {
+        color: #2072AF; /* Color en hover */
+      }
+      .btn-editar {
+        background-color: transparent; /* Fondo transparente */
+        border: none; /* Sin borde */
+        color: #003262; /* Color del icono, puedes cambiarlo */
+        cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+        padding: 0; /* Sin padding adicional */
+        font-size: 1.2em; /* Tamaño del icono */
+      }
+      
+      .btn-editar:hover {
+        color: #2072AF; /* Color en hover */
+      }
+      
+
+
+      .btn-editar2{
+        background-color: transparent; /* Fondo transparente */
+        border: none; /* Sin borde */
+        color: #003262; /* Color del icono, puedes cambiarlo */
+        cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+        padding: 0; /* Sin padding adicional */
+        font-size: 1.2em; /* Tamaño del icono */
+      }
+      
+      .btn-editar2:hover{
+        color: #2072AF; /* Color en hover */
+      }
+
+
+
+      .btn-editar3{
+        background-color: transparent; /* Fondo transparente */
+        border: none; /* Sin borde */
+        color: #003262; /* Color del icono, puedes cambiarlo */
+        cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+        padding: 0; /* Sin padding adicional */
+        font-size: 1.2em; /* Tamaño del icono */
+      }
+      
+      .btn-editar3:hover {
+        color: #2072AF; /* Color en hover */
+      }
+      /* Tablas */
+      
+#tablaCitasContainerNuevo {
+  max-height: 300px; /* Altura máxima del contenedor, ajusta según sea necesario */
+  overflow-y: auto; /* Añadir scroll vertical */
+  overflow-x: hidden; /* Ocultar el scroll horizontal si no es necesario */
+  border: 1px solid #ccc; /* Opcional: borde alrededor del contenedor */
+  padding: 10px; /* Opcional: espaciado interno */
+  background-color: #fff; /* Fondo blanco para el contenedor */
+  margin: 0 auto; /* Centrar el contenedor */
+}
+
+#tablaCitasNuevo {
+  width: 100%; /* Cambia a 100% para que se ajuste al contenedor */
+  border-collapse: collapse; /* Colapsar bordes */
+}
+
+#tablaCitasNuevo th {
+  background-color: black; /* Color de fondo negro para los encabezados */
+  color: white; /* Color del texto blanco */
+  padding: 10px; /* Espaciado interno */
+  text-align: left; /* Alineación del texto */
+}
+
+/* Estilo de las celdas de la tabla */
+#tablaCitasNuevo td {
+  background-color: #f0e68c; /* Color de fondo amarillo claro para las celdas */
+  color: black; /* Color del texto negro */
+  padding: 8px; /* Espaciado interno reducido */
+  border: 1px solid #ccc; /* Bordes de las celdas */
+}
+
+/* Estilo para filas alternas */
+#tablaCitasNuevo tr:nth-child(even) td {
+  background-color: #e0e0e0; /* Color de fondo gris claro para filas pares */
+}
+
+/* Efecto hover sobre las filas */
+#tablaCitasNuevo tr:hover td {
+  background-color: #d3d3d3; /* Color al pasar el ratón sobre las filas */
+}
+@media(max-width: 390px){
+  #tablaCitasContainerNuevo {
+  max-width: 250px;
+  font-size: 12px;
+  }  
+
+}
+@media(max-width: 320px){
+  #tablaCitasContainerNuevo {
+  max-width: 200px;
+  font-size: 11px;
+  overflow-x: auto;
+  }  
+}
+
+/* Contenedor de los checkboxes */
+.checkbox-container {
+  display: flex; /* Usar flexbox para disposición horizontal */
+  align-items: center; /* Alinear verticalmente los elementos al centro */
+  margin-bottom: 20px;
+  font-family: "Kanit", serif;
+
+}
+
+/* Estilo del checkbox (ocultarlo) */
+.checkbox-container input[type="checkbox"] {
+  display: none; /* Ocultar el checkbox original */
+}
+
+/* Estilo del contenedor del checkbox personalizado */
+.checkbox-custom {
+  position: relative;
+  padding-left: 30px; /* Espacio para el nuevo checkbox */
+  margin-right: 20px; /* Espacio entre checkboxes */
+  cursor: pointer;
+  user-select: none; /* Evita que se seleccione el texto */
+}
+
+/* Estilo de la caja del checkbox */
+.checkbox-custom:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px; /* Ancho del checkbox */
+  height: 20px; /* Alto del checkbox */
+  border: 2px solid black; /* Color del borde */
+  border-radius: 4px; /* Esquinas redondeadas */
+  background-color: #fff; /* Fondo blanco */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Estilo cuando el checkbox está marcado */
+.checkbox-container input[type="checkbox"]:checked + .checkbox-custom:before {
+  background-color: black; /* Color de fondo cuando está marcado */
+  border: 2px solid #1B1B1B; /* Color de borde más oscuro */
+}
+
+/* Marca de verificación */
+.checkbox-container input[type="checkbox"]:checked + .checkbox-custom:after {
+  content: "";
+  position: absolute;
+  left: 6px; /* Ajuste de la posición de la marca */
+  top: 2px; /* Ajuste de la posición de la marca */
+  width: 5px; /* Ancho de la marca */
+  height: 10px; /* Alto de la marca */
+  border: solid white; /* Color de la marca */
+  border-width: 0 2px 2px 0; /* Estilo de la marca */
+  transform: rotate(45deg); /* Rotar la marca */
+}
+
+
+
+/* Estilo responsivo adicional para pantallas pequeñas */
+@media (max-width: 600px) {
+  .checkbox-custom {
+      font-size: 4vw; /* Aumentar tamaño de fuente en pantallas pequeñas */
+  }
+}
